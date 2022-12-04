@@ -85,6 +85,9 @@ const initialNodes: Node[] = [
   },  
 ];
 
+
+
+
 const initialEdges: Edge[] = [
   { id: 'button1-click', label: 'Button Click',source: '1', target: '2', labelBgStyle: { fill: '#FFCC00', color: '#fff', fillOpacity: 0.7 }},
   { id: 'button2-click', label: 'Button Click',source: '2', target: '3', labelBgStyle: { fill: '#FFCC00', color: '#fff', fillOpacity: 0.7 } },
@@ -112,9 +115,9 @@ function Flow() {
   );
 
   const SetGraph=()=>{
-        axios.get('http://localhost:9000/v1/flows/'+ID)
+        axios.get('http://localhost:9000/v1/templates/6')
         .then(res=>{
-          var graph = res.data.graph_json;
+          var graph = res.data.flow_ui;
           const data= JSON.parse(graph);
           setNodes(data.nodes);
           setEdges(data.edges);
@@ -137,9 +140,9 @@ function Flow() {
     const graphdata = rfInstance!.toObject();
     console.log(graphdata);
     const lol= {
-      "graph_json": JSON.stringify(graphdata),
+      "flow_ui": JSON.stringify(graphdata),
   }
-    await fetch('http://localhost:9000/v1/flows/'+ID,{
+    await fetch('http://localhost:9000/v1/templates/8',{
       method: 'PUT',
       mode: 'cors',
       headers: {
