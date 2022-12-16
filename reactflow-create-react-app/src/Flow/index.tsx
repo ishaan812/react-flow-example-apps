@@ -41,49 +41,529 @@ const nodeTypes = {
 };
 
 const initialNodes: Node[] = [
-  {
-    id: '1',
-    type: 'start',
-    data: { label: 'FD Card' , card:'<div style="border-style: solid;"><div><h1 id="heading">Heading</h1><h2 id="desc">Description</h2></div></div>' },
-    position: { x: 0, y: 0 },
-    draggable: false,
-  },
-  {
-    id: '2',
-    type: 'singlebutton',
-    data: { label: 'FD Flow Card 1', card:'<div style="border-style: solid;"><div><h1 id="heading">Heading</h1><h2 id="desc">Description</h2></div><div><button id="buttonlabel">Label</button></div></div>'},
-    position: { x: 0, y: 200 },
-    draggable: false,
-  },
-  {
-    id: '3',
-    type: 'doublebutton',
-    data: { label: 'FD Flow Card 2', card: '<div style="border-style: solid;"><div><h1 id="heading">Heading</h1><h2 id="desc">Description</h2></div><div><button id="buttonlabel1">Label1</button><button id="buttonlabel2">Label2</button></div></div>' },
-    position: { x: 0, y: 400 },
-    draggable: false,
-  },
-  {
-    id: '4',
-    type: 'singlebutton',
-    data: { label: 'FD Flow Card 3' , card: ' <div style="border-style: solid;"><div><h1 id="heading">Heading</h1><h2 id="desc">Description</h2></div><div><button id="buttonlabel">Label</button></div></div>'},
-    position: { x: -150, y: 600 },
-    draggable: false,
-  },
-  {
-    id: '5',
-    type: 'endnode',
-    data: { label: 'Feedback Card' },
-    position: { x: 150, y: 600 },
-    draggable: false,
-  },
-  {
-    id: '6',
-    type: 'endnode',
-    data: { label: 'Scheduler Card' },
-    position: { x: -150, y: 800 },
-    draggable: false,
-  },  
-];
+    {
+        id: "1",
+        nodeId: "e2bf3e3f-63f1-44e9-9f9a-43a3bffc4d02",
+        nodeType: "UINode",
+        nodeLabel: "Carousel Card",
+        childNodes: [
+            {                
+                nodeId: "e2bf3e3f-63f1-44e9-9f9a-43a3bffc4d03",
+                transitionExpression: "[stashCreationCardClicked] == true"
+            }
+        ],
+        cardData: {
+            cardHtml: "<div>hi</div>",
+            cardProperties: {
+                height: "50%",
+                width: "50%",
+                bgColor: "#ffffff"
+            },
+            podProperties: {
+                podId :"15d52901-e35e-4879-abbe-0e0ddfe332fe",
+                podType: "carousel",
+                podWidth: "300%",
+                podHeight: "150px",
+                maxCards: "3",
+                horizontalScrolling : "true",
+                verticalScrolling: "false"
+            },
+            elements: [
+                {
+                    cid: "xx1",
+                    component: "image",
+                    styleProperties: {
+                        width: "40%",
+                        height: "20%",
+                        alignment: "center",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    src: "https://imgs.search.brave.com/a5Lr0RTcLiZWPF57sp9cgD0zzT3nuxI_kC9UxF7U0wY/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/dHJhdmVsYWxlcnRz/LmNhL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE5LzA3L3NodXR0/ZXJzdG9ja182NDQ3/NDA0OTVmZWF0Lmpw/Zw",
+                    title: "Image",
+                    editableProperties: [
+                        {
+                            key: "styleProperties.width",
+                            label: "width"
+                        }
+                    ]
+                },
+                {
+                    cid: "xx2",
+                    component: "label",
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        variant: "h5",
+                        alignment: "center",
+                        color: "#000000",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "Stash",
+                    title: "Pitch",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        }
+                    ]
+                },
+                {   
+                    cid: "xx3",
+                    component: "label",
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        alignment: "center",
+                        variant: "h7",
+                        color: "#000000",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "Flexi-savings account. Insanely smart",
+                    title: "Content",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        }
+                    ]
+                },
+                {   
+                    cid: "xx4",
+                    component: "button",
+                    varName: "stashCreationCardClicked",
+                    value: false,
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        alignment: "center",
+                        variant: "contained",
+                        color: "#ffffff",
+                        bgColor:"#000000",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "Next",
+                    title: "button",
+                    onClick: "1+2",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        },
+                        {
+                            key: "styleProperties.bgColor",
+                            label: "bgColor"
+                        }
+                    ]
+                }
+            ]
+        },
+        action: {},
+        transitionExpression: "",
+        position: { x: 0, y: 200 },
+        draggable: false,
+    },
+    {
+        id:"2",
+        nodeId: "e2bf3e3f-63f1-44e9-9f9a-43a3bffc4d03",
+        nodeType: "UINode",
+        nodeLabel: "Product Description card",
+        childNodes: [
+            {
+                nodeId: "e2bf3e3f-63f1-44e9-9f9a-43a3bffc4d04",
+                transitionExpression: "[btnStashGetStartedClicked] == false && [cancelStashGetStartedClicked] == true"
+            },
+            {
+                nodeId: "e2bf3e3f-63f1-44e9-9f9a-43a3bffc4d05",
+                transitionExpression: "[btnStashGetStartedClicked] == true && [cancelStashGetStartedClicked] == false"
+            }
+        ],
+        cardData: {
+            cardHtml: "<div>hi</div>",
+            cardProperties: {
+                height: "50%",
+                width: "50%",
+                bgColor: "#ffffff"
+            },
+            podId: "759e724d-ab85-4306-af47-cfb95dea8b9e",
+            podType: "FullScreen",
+            podProperties: {
+                podId :"74d44e3e-6fb4-4701-97b5-3894e327ba69",
+                podType: "Full_Screen", 
+                podWidth:"100%",
+                podHeight:"100%",
+                maxCards: "1",
+                horizontalScrolling : "false",
+                verticalScrolling: "true"
+            },
+            elements: [
+                {
+                    cid: "xx1",
+                    component: "image",
+                    styleProperties: {
+                        width: "40%",
+                        height: "20%",
+                        alignment: "center",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    src: "https://imgs.search.brave.com/a5Lr0RTcLiZWPF57sp9cgD0zzT3nuxI_kC9UxF7U0wY/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/dHJhdmVsYWxlcnRz/LmNhL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE5LzA3L3NodXR0/ZXJzdG9ja182NDQ3/NDA0OTVmZWF0Lmpw/Zw",
+                    title: "Image",
+                    editableProperties: [
+                        {
+                            key: "styleProperties.width",
+                            label: "width"
+                        }
+                    ]
+                },
+                {
+                    cid: "xx2",
+                    component: "label",
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        variant: "h5",
+                        alignment: "center",
+                        color: "#000000",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "What is a Stash?",
+                    title: "Pitch",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        }
+                    ]
+                },
+                {   
+                    cid: "xx3",
+                    component: "label",
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        alignment: "center",
+                        variant: "h7",
+                        color: "#000000",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "Stash is a Goal based Savings account.",
+                    title: "Description",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        }
+                    ]
+                },
+                {   
+                    cid: "xx4",
+                    component: "label",
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        alignment: "center",
+                        variant: "h7",
+                        color: "#000000",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "You can save towards any goal from buying your dream car to sending your kid to a good school.",
+                    title: "Content",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        }
+                    ]
+                },
+                {   
+                    cid: "xx5",
+                    component: "button",
+                    varName: "btnStashGetStartedClicked",
+                    value: false,
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        alignment: "center",
+                        variant: "contained",
+                        color: "#ffffff",
+                        bgColor:"#000000",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "Get Started",
+                    title: "button",
+                    event: "onGetStartedClicked",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        },
+                        {
+                            key: "styleProperties.bgColor",
+                            label: "bgColor"
+                        }
+                    ]
+                }
+            ]
+        },
+        action: {},
+        transitionExpression: "[stashCreationCardClicked] == true",
+        position: { "x": 0, "y": 400 },
+        draggable: false,
+    },    
+    {
+        id: "3",
+        nodeId: "e2bf3e3f-63f1-44e9-9f9a-43a3bffc4d05",
+        nodeType: "UINode",
+        nodeLabel: "Goal screen",
+        childNodes: [
+            {
+                nodeId: "e2bf3e3f-63f1-44e9-9f9a-43a3bffc4d06",
+                transitionExpression: "[btnGoalContinueClicked] == true"
+            }
+        ],
+        cardData: {
+            cardHtml: "<div>hi</div>",
+            cardProperties: {
+                height: "100%",
+                width: "100%",
+                bgColor: "#908E8D"
+            },
+            podId: "759e724d-ab85-4306-af47-cfb95dea8b9e",
+            podType: "FullScreen",
+            podProperties:{
+                podId :"74d44e3e-6fb4-4701-97b5-3894e327ba69",
+                podType: "FullScreen", 
+                podWidth:"100%",
+                podHeight:"100%",
+                maxCards: "1",
+                horizontalScrolling : false,
+                verticalScrolling: true
+            },
+            elements: [
+                {
+                    cid: "xx1",
+                    component: "image",
+                    styleProperties: {
+                        width: "100%",
+                        height: "20%",
+                        alignment: "center",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    src: "https://imgs.search.brave.com/a5Lr0RTcLiZWPF57sp9cgD0zzT3nuxI_kC9UxF7U0wY/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/dHJhdmVsYWxlcnRz/LmNhL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE5LzA3L3NodXR0/ZXJzdG9ja182NDQ3/NDA0OTVmZWF0Lmpw/Zw",
+                    title: "Image",
+                    editableProperties: [
+                        {
+                            key: "styleProperties.width",
+                            label: "width"
+                        }
+                    ]
+                },
+                {
+                    cid: "xx2",
+                    component: "label",
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        variant: "h5",
+                        alignment: "center",
+                        color: "#ffffff",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "What is your goal?",
+                    title: "Title",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        }
+                    ]
+                },
+                {   
+                    cid: "xx3",
+                    component: "textField",
+                    varName: "goalAmount",
+                    value: "",
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        alignment: "center",
+                        variant: "outlined",
+                        color: "#FFFFFF",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    placeholder: "Goal Amount",
+                    inputType: "number",
+                    title: "Goal Amount",
+                    event: "onGoalAmountInput",
+                    editableProperties: [
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        },
+                        {
+                            key: "styleProperties.bgColor",
+                            label: "bgColor"
+                        }
+                    ]
+                },
+                {   
+                    cid: "xx4",
+                    component: "textField",
+                    varName: "stashName",
+                    value: "",
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        alignment: "center",
+                        variant: "outlined",
+                        color: "#FFFFFF",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    placeholder: "Name your stash",
+                    inputType: "text",
+                    title: "Stash Name",
+                    event: "onStashNameInput",
+                    editableProperties: [
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        },
+                        {
+                            key: "styleProperties.bgColor",
+                            label: "bgColor"
+                        }
+                    ]
+                },
+                {   
+                    cid: "xx5",
+                    component: "button",
+                    varName: "btnGoalContinueClicked",
+                    value: false,
+                    styleProperties: {
+                        fontFamily: "Helvetica",
+                        alignment: "center",
+                        variant: "contained",
+                        color: "#ffffff",
+                        bgColor:"#000000",
+                        margin: [
+                            2,
+                            2,
+                            0,
+                            0
+                        ]
+                    },
+                    label: "Next",
+                    event: "btnGoalContinueHandler",
+                    title:"button",
+                    editableProperties: [
+                        {
+                            key: "value",
+                            label: "text"
+                        }, 
+                        {
+                            key: "styleProperties.color",
+                            label: "color"
+                        },
+                        {
+                            key: "styleProperties.bgColor",
+                            label: "bgColor"
+                        }
+                    ]
+                }
+            ]
+        },
+        action: {},
+        transitionExpression: "[btnStashGetStartedClicked] == true && [cancelStashGetStartedClicked] == false",
+        position: { x: 0, y: 600 },
+        draggable: false,
+    }
+]
 
 
 
@@ -114,18 +594,18 @@ function Flow() {
     [setEdges]
   );
 
-  const SetGraph=()=>{
-        axios.get('http://localhost:9000/v1/templates/6')
-        .then(res=>{
-          var graph = res.data.flow_ui;
-          const data= JSON.parse(graph);
-          setNodes(data.nodes);
-          setEdges(data.edges);
-        })
-        .catch(err=>{
-          console.log(err);
-        })
-    }
+  // const SetGraph=()=>{
+  //       axios.get('http://localhost:9000/v1/templates/6')
+  //       .then(res=>{
+  //         var graph = res.data.flow_ui;
+  //         const data= JSON.parse(graph);
+  //         setNodes(data.nodes);
+  //         setEdges(data.edges);
+  //       })
+  //       .catch(err=>{
+  //         console.log(err);
+  //       })
+  //   }
 
   const onElementClick = (event: any, object: any) => {
     console.log(object.data.label);
@@ -142,7 +622,7 @@ function Flow() {
     const lol= {
       "flow_ui": JSON.stringify(graphdata),
   }
-    await fetch('http://localhost:9000/v1/templates/8',{
+    await fetch('http://localhost:9000/v1/templates/11',{
       method: 'PUT',
       mode: 'cors',
       headers: {
@@ -150,6 +630,7 @@ function Flow() {
       },
       body:  JSON.stringify(lol),
     })
+    console.log(lol);
     
   }
     
@@ -191,7 +672,7 @@ function Flow() {
     >
       <button onClick={SaveGraph}>Save</button>
       <button onClick={addNode}>Add Node</button>
-      <button onClick={SetGraph}>Restore Graph From Database</button>
+      {/* <button onClick={SetGraph}>Restore Graph From Database</button> */}
       <ReactFlow
         nodes={nodes}
         onNodesChange={onNodesChange}
